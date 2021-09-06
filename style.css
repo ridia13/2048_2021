@@ -1,1 +1,23 @@
 /* 2,4,8,16,32,64,128,256,512,1024,2048  각 color 적용*/
+td{
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  background-color: #CDC1B4;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  border: 5px solid #BBADA0;
+  border-radius: 5px;
+}
+
+table{
+  padding: 5px;
+  background-color: #BBADA0;
+  border-radius: 5px;
+}
+
+.color-2{
+  color: #776E65;
+  background-color: #EEE4DA;
+}

@@ -1,22 +1,54 @@
+'use strict';
+const $table = document.querySelector('#js-table');
+let data = [];
 
+function createTable() { // 2차원 배열 생성 (4*4) + 화면 그리기
+  const $fragment = document.createDocumentFragment();
+  [1, 2, 3, 4].forEach((v, ri, arr) => {
+    const row = [];
+    data.push(row);
+    const $tr = document.createElement('tr');
+    [1, 2, 3, 4].forEach((v, ci, arr) => {
+      row.push(0);
+      const $td = document.createElement('td');
+      $tr.append($td);
+    })
+    $fragment.append($tr);
+  })
+  $table.append($fragment);
+  put2inRandomCell();
+  draw();
+}
 
+function put2inRandomCell() {//랜덤자리 숫자2 배치(재사용)
+  const emptyCells = [];
+  data.forEach((row, ri, arr) => { //빈 자리 찾기
+    row.forEach((cell, ci, arr) => {
+      if (cell === 0) {
+        emptyCells.push([ri, ci]);
+      }
+    })
+  })
+  const emptyRandom = emptyCells[Math.floor(Math.random() * emptyCells.length)];
+  data[emptyRandom[0]][emptyRandom[1]] = 2;
+}
 
-// **방향키||마우스**
+function draw(){// data에 있는 숫자 그리기(재사용)
+  data.forEach((rowData,ri) => {
+    rowData.forEach((cellData,ci) => {
+      const $target = $table.children[ri].cells[ci];
+      if(cellData > 0){
+        $target.textContent = cellData;
+        $target.className = 'color-' + cellData;
+      }else if(cellData <= 0){
+        $target.textContent = '';
+        $target.className = '';
+      }
+    })
+  })
+}
 
-
-// 모든칸이 가득 찼나?
-// y 칸 기준 상하좌우에 같은 수가 있나
-  //y 대기
-  // n game over
-// n 해당방향의 상위로 모든 수 이동
-// (해당 방향 줄 기준)맞닿아 있는 숫자가 있는가
-  // y 서로 같은 수 인가?
-    // y 두 숫자를 더해 해당 방향 상위칸에 넣는다
-    // 2048이 있나?
-      // y 축하 msg -> 종료  
-// 2||4를 비어있는 자리에 랜덤 배치 -> 대기
-
-
-
-// n 대기
-// 방향따라 제한되는 구간 정확히 이해 안감
+function init() {
+  createTable();
+}
+init();
