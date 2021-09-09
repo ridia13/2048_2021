@@ -22,3 +22,39 @@ table{
   color: #776E65;
   background-color: #EEE4DA;
 }
+.color-4{
+  color: #776E65;
+  background-color: #EDE0C8;
+}
+.color-8{
+  color: #FAF8EF;
+  background-color: #F2B179;
+}
+.color-16{
+  color: #FAF8EF;
+  background-color: #F69664;
+}
+.color-32{
+  color: #FAF8EF;
+  background-color: #F77C5F;
+}
+.color-64{
+  color: #FAF8EF;
+  background-color: #F75F3B;
+}
+.color-128{
+  color: #FAF8EF;
+  background-color: #EDD073;
+}
+.color-256{
+  color: #FAF8EF;
+  background-color: #EDCC62;
+}
+.color-512{
+  color: #FAF8EF;
+  background-color: #EDC950;
+}
+.color-1024{
+  color: #FAF8EF;
+  background-color: #EDC950;
+}
