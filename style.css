@@ -54,7 +54,12 @@ table{
   color: #FAF8EF;
   background-color: #EDC950;
 }
-.color-1024{
+.color-1024,
+.color-2048{
   color: #FAF8EF;
   background-color: #EDC950;
+}
+
+.result{
+  font-size: 2rem;
 }
